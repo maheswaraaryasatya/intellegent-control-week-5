@@ -1,0 +1,32 @@
+ANALISIS DAN DISKUSI WEEK 5
+Nama		: Maheswara Aryasatya Nugraha
+NIM		: 224308036
+Kelas		: TKA-6B
+Analisis
+1. Bagaimana akurasi deteksi pose dengan YOLOv8?
+Jawab : 
+Akurasi deteksi pose dengan YOLOv8 cukup tinggi dalam kondisi ideal, terutama jika resolusi gambar atau ideo tinggi, pose manusia terlihat jelas, tidak ada objek yang menghalangi tubuh. Namun, YOLOv8 Pose bisa mengalami kesalahan jika ada gerakan cepat atau pencahayaan yang buruk dan kesulitan dalam mendeteksi objek yang tertutup sebagian. Akurasi juga dipengaruhi oleh faktor seperti kualitas dataset yang digunakan dalam pelatihan model.
+
+2. Apakah model bekerja baik di kondisi pencahayaan rendah?
+Jawab : 
+Di kondisi pencahayaan rendah, YOLOv8 Pose dapat mengalami penurunan akurasi di pencahayaan rendah karena keypoint tubuh menjadi sulit terdeteksi akibat kurangnya kontras antara objek dan latar belakang serta meningkatnya noise pada gambarmembuat prediksi kurang stabil. Selain itu, bayangan dan pencahayaan tidak merata dapat membuat model kesulitan mengenali struktur tubuh secara akurat. Untuk mengatasi hal ini, dapat menggunakan kamera dengan fitur low-light enhancement  atau dilakukan preprocessing seperti histogram equalization untuk meningkatkan kontras gambar dan membuat deteksi lebih baik dalam berbagai kondisi pencahayaan.
+3. Bagaimana YOLOv8 dibandingkan dengan metode HPE lain seperti MediaPipe atau OpenPose?
+Jawab : 
+YOLOv8 memiliki keunggulan dalam kecepatan, efisiensi dan fleksibel, sehingga cocok untuk aplikasi real-time. MediaPipe lebih efisien untuk perangkat mobile karena dirancang untuk berjalan dengan ringan, tetapi kurang akurat dalam kondisi kompleks.  OpenPose, di sisi lain, menawarkan akurasi yang lebih tinggi, terutama dalam pose yang kompleks, tetapi memiliki waktu inferensi yang lebih lama karena proses multi-stage yang lebih mendalam. Oleh karena itu, Jika prioritas adalah kecepatan, YOLOv8 lebih unggul dibandingkan OpenPose. Jika membutuhkan akurasi tinggi, OpenPose lebih baik, tetapi lebih lambat. Jika ingin solusi ringan dan cepat di mobile, MediaPipe adalah pilihan terbaik, tetapi kurang akurat dibandingkan dua lainnya.
+
+Diskusi
+1. Bagaimana YOLOv8 Pose dapat diterapkan dalam robotika dan otomatisasi industri?
+Jawab : 
+YOLOv8 Pose dapat diterapkan dalam robotika dan otomatisasi industri untuk meningkatkan keselamatan dan efisiensi. Dalam lingkungan industri, teknologi ini digunakan untuk mendeteksi postur pekerja dan memastikan mereka mengikuti prosedur keselamatan, serta mencegah kecelakaan dengan mengenali gerakan berbahaya yang dapat mengaktifkan mekanisme penghentian otomatis pada robot. Selain itu, YOLOv8 Pose memungkinkan kontrol robot berbasis gerakan (gesture control),  robot dapat mengenali gestur gestur tangan atau tubuh pekerja tanpa memerlukan perangkat tambahan tertentu untuk menjalankan tugas seperti mengambil atau meletakkan objek sesuai perintah pekerja. 
+
+2. Apa tantangan dalam mendeteksi pose manusia secara real-time?
+Jawab : 
+Tantangan dalam mendeteksi pose manusia secara real-time yaitu:
+i. Kecepatan inferensi: Harus cukup cepat untuk menghindari keterlambatan yang digunakan dalam aplikasi real-time.
+ii. Occlusion (terhalang objek lain): Jika bagian tubuh tertutup objek lain, model bisa gagal mendeteksi pose dengan baik dan dapat mengurangi akurasi model.
+iii. Variasi kondisi lingkungan:  Cahaya redup, sudut kamera berbeda, atau latar belakang kompleks bisa menurunkan akurasi.
+
+3. Bagaimana cara meningkatkan akurasi deteksi pose menggunakan dataset tambahan?
+Jawab : 
+Akurasi deteksi pose dapat ditingkatkan dengan melakukan fine-tuning model menggunakan dataset yang lebih spesifik sesuai dengan kebutuhan aplikasi, seperti dataset atlet untuk analisis olahraga atau dataset pekerja untuk pemantauan industri. Lalu, teknik data augmentation, seperti rotasi, flipping, dan perubahan pencahayaan, dapat membantu model menjadi lebih generalisasi dalam menghadapi berbagai kondisi. Selain itu, penggunaan model yang lebih besar, seperti YOLOv8x-pose, dapat meningkatkan akurasi dengan memanfaatkan arsitektur yang lebih kompleks dan jumlah parameter yang lebih banyak, sehingga model lebih mampu mengenali pose dalam berbagai situasi yang lebih menantang.
+
